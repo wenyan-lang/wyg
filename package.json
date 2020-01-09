@@ -7,7 +7,7 @@
     "test": "jest",
     "typings": "tsc --emitDeclarationOnly",
     "build": "npm run typings && rollup -c",
-    "lint": "eslint src/**/*.ts *.js",
+    "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
   },
   "bin": {
@@ -23,7 +23,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.ts *.js": [
+    "src/**/*.ts": [
       "eslint --fix",
       "git add"
     ]
@@ -42,12 +42,13 @@
   "homepage": "https://github.com/antfu/wypm#readme",
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.2.10",
+    "@rollup/plugin-typescript": "2.0.2",
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.5",
     "eslint": "^6.8.0",
-    "jest": "^24.9.0",
+    "eslint-plugin-jest": "^23.3.0",
     "husky": "3.1.0",
-    "@rollup/plugin-typescript": "2.0.2",
+    "jest": "^24.9.0",
     "lint-staged": "9.5.0",
     "rollup": "^1.29.0",
     "rollup-plugin-dts": "1.1.13",
