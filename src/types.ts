@@ -16,7 +16,7 @@ export type Registry = PackageInfo[]
 
 export interface PackageInfo {
   name: string
-  alias?: string[]
+  aliases?: string[]
   repo: string
   author?: string
   description?: string

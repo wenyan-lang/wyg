@@ -14,17 +14,20 @@ function buildIndex () {
     if (index.packages[pkg.name])
       throw new Error(`Package name ${pkg.name} already exists`)
     if (index.alias[pkg.name])
-      throw new Error(`Package name ${pkg.name} conflicted with existing alias`)
+      throw new Error(`Package name ${pkg.name} conflicted with existing aliases`)
 
     index.packages[pkg.name] = pkg.repo
 
-    for (const al of pkg.alias || []) {
-      if (index.alias[al])
-        throw new Error(`Alias ${al} already exists`)
-      if (index.packages[al])
-        throw new Error(`Alias ${al}  conflicted with existing package names`)
+    if ((pkg.aliases || []).length > 5)
+      throw new Error('Up to 5 aliases is allowed for a package')
 
-      index.alias[al] = pkg.name
+    for (const alias of pkg.aliases || []) {
+      if (index.alias[alias])
+        throw new Error(`Alias ${alias} already exists`)
+      if (index.packages[alias])
+        throw new Error(`Alias ${alias}  conflicted with existing package names`)
+
+      index.alias[alias] = pkg.name
     }
   }
 
