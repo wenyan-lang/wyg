@@ -10,6 +10,7 @@ export default [
       {
         file: 'dist/index.js',
         format: 'cjs',
+        banner: '#!/usr/bin/env node',
       },
     ],
     plugins: [

@@ -4,12 +4,14 @@
   "description": "Package management for Wenyan Lang",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
-    "typings": "tsc --emitDeclarationOnly",
-    "build": "npm run typings && rollup -c",
     "dev": "rollup -c --watch",
+    "build": "npm run typings && rollup -c",
+    "build:registry": "ts-node ./scripts/build-registry.ts",
+    "typings": "tsc --emitDeclarationOnly",
+    "publish:ci": "npm run build && npm publish",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest"
   },
   "bin": {
     "wypm": "dist/index.js"
@@ -30,6 +32,10 @@
     "src/**/*.ts": [
       "eslint --fix",
       "git add"
+    ],
+    "registry-packages.ts": [
+      "npm run build:registry",
+      "git add registry-index.json"
     ]
   },
   "keywords": [
@@ -50,16 +56,19 @@
     "@rollup/plugin-typescript": "2.0.2",
     "@types/fs-extra": "^8.0.1",
     "@types/jest": "^24.0.25",
+    "@types/json-stable-stringify": "^1.0.32",
     "@types/node": "^13.1.5",
     "eslint": "^6.8.0",
     "eslint-plugin-jest": "^23.3.0",
     "husky": "3.1.0",
     "jest": "^24.9.0",
+    "json-stable-stringify": "^1.0.1",
     "lint-staged": "9.5.0",
     "rollup": "^1.29.0",
     "rollup-plugin-dts": "1.1.13",
     "rollup-plugin-uglify": "6.0.4",
     "ts-jest": "^24.3.0",
+    "ts-node": "^8.5.4",
     "typescript": "^3.7.4"
   },
   "dependencies": {

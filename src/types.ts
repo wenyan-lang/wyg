@@ -11,3 +11,13 @@ export interface RepoInfo {
   owner: string
   origin?: string
 }
+
+export type Registry = PackageInfo[]
+
+export interface PackageInfo {
+  name: string
+  alias?: string[]
+  repo: string
+  author?: string
+  description?: string
+}

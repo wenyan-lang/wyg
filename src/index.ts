@@ -16,7 +16,8 @@ async function handleInstall (packages: string[], cmd: any) {
       resolvedPackages.push(name)
     }
 
-    consola.success(`${resolvedPackages.join(', ')} successfully installed.`)
+    const is = resolvedPackages.length > 1 ? 'are' : 'is'
+    consola.success(`${resolvedPackages.join(', ')} ${is} successfully installed.`)
   }
   catch (e) {
     consola.error(e)
