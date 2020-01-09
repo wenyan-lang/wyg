@@ -1,0 +1,58 @@
+{
+  "name": "wypm",
+  "version": "0.0.1",
+  "description": "Package management for Wenyan Lang",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "typings": "tsc --emitDeclarationOnly",
+    "build": "npm run typings && rollup -c",
+    "lint": "eslint src/**/*.ts *.js",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "bin": {
+    "wypm": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antfu/wypm.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts *.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "wenyan",
+    "wenyan-lang",
+    "npm",
+    "packages"
+  ],
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antfu/wypm/issues"
+  },
+  "homepage": "https://github.com/antfu/wypm#readme",
+  "devDependencies": {
+    "@antfu/eslint-config-ts": "^0.2.10",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.5",
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "husky": "3.1.0",
+    "@rollup/plugin-typescript": "2.0.2",
+    "lint-staged": "9.5.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-dts": "1.1.13",
+    "rollup-plugin-uglify": "6.0.4",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4"
+  }
+}
