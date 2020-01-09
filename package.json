@@ -11,7 +11,8 @@
     "publish:ci": "npm run build && npm publish",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest"
+    "test": "jest",
+    "verify": "ts-node ./scripts/verify"
   },
   "bin": {
     "wypm": "dist/index.js"

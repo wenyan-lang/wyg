@@ -4,7 +4,7 @@ import stringify from 'json-stable-stringify'
 import { packages } from '../registry-packages'
 import { RegistryIndex } from '../src/types'
 
-function buildIndex () {
+export function BuildIndex (writeToFile = true) {
   const index: RegistryIndex = {
     packages: {},
     alias: {},
@@ -25,13 +25,16 @@ function buildIndex () {
       if (index.alias[alias])
         throw new Error(`Alias ${alias} already exists`)
       if (index.packages[alias])
-        throw new Error(`Alias ${alias}  conflicted with existing package names`)
+        throw new Error(`Alias ${alias} conflicted with existing package names`)
 
       index.alias[alias] = pkg.name
     }
   }
 
-  fs.writeFileSync(path.resolve(__dirname, '..', 'registry-index.json'), `${stringify(index, { space: 2 })}\n`, 'utf-8')
+  if (writeToFile)
+    fs.writeFileSync(path.resolve(__dirname, '..', 'registry-index.json'), `${stringify(index, { space: 2 })}\n`, 'utf-8')
+  return index
 }
 
-buildIndex()
+if (require.main === module)
+  BuildIndex()

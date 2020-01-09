@@ -2,15 +2,15 @@
 
 Package management for Wenyan Lang 
 
-> 🚧 Please note this it not an official tool (yet). The usage and APIs may have breaking changes frequently.
+> 🚧 Please note this is not an official tool (yet). The usage and APIs may have breaking changes frequently.
 
-## 💻 Install 
+## Install 
 
 ```bash
 npm i -g @antfu/wypm
 ```
 
-## 🦄 Usage
+## Usage
 
 ```bash
 wypm i 子曰
@@ -26,7 +26,7 @@ It will download the code of [`子曰`](https://github.com/antfu/ziyue-wy) to th
 
 Think of `藏經閣` like the `node_modules` of Node.js. You may also want to include `藏經閣` into your `.gitignore`
 
-## 📦 Publish Your Own Packages
+### 📦 Publish Your Own Packages
 
 It's quite simple, create a git repo on Github with `序.wy` in the root. 
 
