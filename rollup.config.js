@@ -9,6 +9,7 @@ const external = [
   'axios',
   'download-git-repo',
   'fs-extra',
+  'update-notifier',
 ]
 
 export default [

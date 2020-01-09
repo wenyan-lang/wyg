@@ -1,7 +1,14 @@
 import commander from 'commander'
 import consola from 'consola'
-import { version } from '../package.json'
+// @ts-ignore
+import updateNotifier from 'update-notifier'
+import pkg, { version } from '../package.json'
 import { getRegistryIndex, getPackage, resolvePackageName } from './registry'
+
+updateNotifier({
+  pkg,
+  // updateCheckInterval: 1000 * 60 * 60 * 24 * 3, // 3 days
+}).notify()
 
 const program = new commander.Command()
 
