@@ -23,7 +23,10 @@ export const packages: PackageInfo[] = [
     name: '子曰',
     repo: 'antfu/ziyue-wy',
     description: 'Cowsay for Wenyan Lang',
-    author: 'antfu<https://github.com/antfu>',
+    author: {
+      name: 'antfu',
+      url: 'https://github.com/antfu>',
+    },
     aliases: ['ziyue'],
   },
 ]

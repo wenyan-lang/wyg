@@ -37,10 +37,20 @@ export function resolveRepoLink (repoLink: string): RepoInfo {
   }
 }
 
-export function getRepoRawRoot (repo: RepoInfo) {
+export function getRepoRawRoot (repo: RepoInfo | string) {
+  if (typeof repo === 'string')
+    repo = resolveRepoLink(repo)
   if (repo.type === 'github')
     return `https://raw.githubusercontent.com/${repo.owner}/${repo.name}/${repo.checkout}`
   throw new SyntaxError(`Resolving raw root for ${repo.type} is not yet supported.`)
+}
+
+export function getRepoRoot (repo: RepoInfo | string) {
+  if (typeof repo === 'string')
+    repo = resolveRepoLink(repo)
+  if (repo.type === 'github')
+    return `https://github.com/${repo.owner}/${repo.name}/tree/${repo.checkout}`
+  throw new SyntaxError(`Resolving root for ${repo.type} is not yet supported.`)
 }
 
 export function resolveRegistryIndex (registryIndex: string) {
