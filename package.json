@@ -3,7 +3,6 @@
   "version": "0.0.2",
   "description": "Package management for Wenyan Lang",
   "main": "dist/index.js",
-  "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "dev": "rollup -c --watch",
