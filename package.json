@@ -7,6 +7,7 @@
     "test": "jest",
     "typings": "tsc --emitDeclarationOnly",
     "build": "npm run typings && rollup -c",
+    "dev": "rollup -c --watch",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -55,5 +56,10 @@
     "rollup-plugin-uglify": "6.0.4",
     "ts-jest": "^24.3.0",
     "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "commander": "^4.1.0",
+    "consola": "^2.11.3"
   }
 }

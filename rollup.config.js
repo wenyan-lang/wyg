@@ -2,27 +2,32 @@
 import typescript from '@rollup/plugin-typescript'
 import dts from 'rollup-plugin-dts'
 
-export default [{
-    input: `src/index.ts`,
+export default [
+  {
+    input: 'src/index.ts',
     output: [
       {
-        file: `dist/index.js`,
+        file: 'dist/index.js',
         format: 'cjs',
       },
     ],
     plugins: [
       typescript(),
     ],
-    external: [],
+    external: [
+      'commander',
+      'consola',
+      'axios',
+    ],
   },
   {
-    input: `./typings/index.d.ts`,
+    input: './typings/index.d.ts',
     output: {
-      file: `dist/index.d.ts`,
+      file: 'dist/index.d.ts',
       format: 'es',
     },
     plugins: [
       dts(),
     ],
-  }
+  },
 ]
