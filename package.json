@@ -3,19 +3,19 @@
   "version": "0.0.1",
   "description": "Package management for Wenyan Lang",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "npm run typings && rollup -c",
-    "build:registry": "ts-node ./scripts/build-registry.ts",
     "typings": "tsc --emitDeclarationOnly",
     "publish:ci": "npm run build && npm publish",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest",
-    "verify": "ts-node ./scripts/verify"
+    "test": "jest"
   },
   "bin": {
-    "wypm": "dist/index.js"
+    "wypm": "dist/cli.js"
   },
   "files": [
     "dist"

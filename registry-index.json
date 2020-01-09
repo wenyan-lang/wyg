@@ -1,8 +1,0 @@
-{
-  "alias": {
-    "ziyue": "子曰"
-  },
-  "packages": {
-    "子曰": "antfu/ziyue-wy"
-  }
-}

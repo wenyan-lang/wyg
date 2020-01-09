@@ -11,18 +11,3 @@ export interface RepoInfo {
   owner: string
   origin?: string
 }
-
-export type AuthorInfo = string | {
-  name: string
-  url: string
-}
-
-export type Registry = PackageInfo[]
-
-export interface PackageInfo {
-  name: string
-  aliases?: string[]
-  repo: string
-  author?: AuthorInfo
-  description?: string
-}
