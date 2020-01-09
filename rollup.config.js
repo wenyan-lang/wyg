@@ -18,6 +18,8 @@ export default [
       'commander',
       'consola',
       'axios',
+      'download-git-repo',
+      'fs-extra',
     ],
   },
   {

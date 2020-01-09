@@ -89,12 +89,4 @@ sw.*
 # Vim swap files
 *.swp
 
-packages/api.ts
-packages/api.backup.ts
-
-storybook-static
-
-# Package Indexes
-packages/core/index.ts
-packages/firebase/index.ts
-packages/i18n/index.ts
+藏經閣

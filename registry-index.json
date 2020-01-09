@@ -1,6 +1,6 @@
 {
   "packages": {
-    "子曰": "antfu/ziyue.wy"
+    "子曰": "antfu/ziyue-wy"
   },
   "alias": {
     "ziyue": "子曰"
