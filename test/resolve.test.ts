@@ -1,7 +1,16 @@
-import { resolveProjectLink } from '../src/resolve'
+import { resolveRepoLink } from '../src/resolve'
+
+const r = resolveRepoLink
 
 describe('resolve', () => {
-  it('project links', () => {
-    expect(resolveProjectLink('antfu/ziyue.wy')).toBe('https://github.com/antfu/ziyue.wy/blob/master')
+  it('repo links', () => {
+    expect(r('antfu/ziyue-wy'))
+      .toEqual({
+        checkout: 'master',
+        type: 'github',
+        origin: 'github.com',
+        owner: 'antfu',
+        name: 'ziyue-wy',
+      })
   })
 })

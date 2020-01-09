@@ -1,7 +1,7 @@
 import axios from 'axios'
 import fs from 'fs-extra'
-import { DEFAULT_REGISTRY_INDEX, DEFAULT_REGISTRY_INDEX_FILENAME, WENYAN_MODULES_DIRNAME } from './meta'
-import { resolveProjectLink } from './resolve'
+import { DEFAULT_REGISTRY_INDEX, WENYAN_MODULES_DIRNAME } from './meta'
+import { resolveRegistryIndex } from './resolve'
 import { RegistryIndex } from './types'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const download = require('download-git-repo')
@@ -12,7 +12,7 @@ export async function getRegistryIndex (registryIndex = DEFAULT_REGISTRY_INDEX, 
   if (cache && registryIndexCache)
     return registryIndexCache
 
-  const url = `${resolveProjectLink(registryIndex)}/${DEFAULT_REGISTRY_INDEX_FILENAME}?raw=true`
+  const url = resolveRegistryIndex(registryIndex)
 
   const { data } = await axios.get<RegistryIndex>(url)
 

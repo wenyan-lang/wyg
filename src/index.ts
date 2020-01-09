@@ -1,5 +1,6 @@
 import commander from 'commander'
 import consola from 'consola'
+import { version } from '../package.json'
 import { getRegistryIndex, getPackage, resolvePackageName } from './registry'
 
 const program = new commander.Command()
@@ -24,13 +25,17 @@ async function handleInstall (packages: string[], cmd: any) {
 }
 
 program
-  .command('install [packages...]')
+  .version(version)
+  .name('wypm')
+
+program
+  .command('install [names...]')
   .description('install one or more packages')
   .action(handleInstall)
 
 program
-  .command('i [packages...]')
-  .description('install one or more packages')
+  .command('i [names...]')
+  .description('shorthand for install')
   .action(handleInstall)
 
 program

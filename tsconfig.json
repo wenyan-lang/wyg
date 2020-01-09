@@ -12,8 +12,8 @@
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,
+    "resolveJsonModule": true,
     "declarationDir": "./typings",
-    "rootDir": "src",
     "types": [
       "@types/node",
       "@types/jest"
@@ -26,5 +26,8 @@
     "node_modules",
     "**/**/*.test.ts",
     "**/**/*.md",
+    "test",
+    "typings",
+    "dist"
   ]
 }
