@@ -2,12 +2,10 @@
 
 Package management for Wenyan Lang 
 
-> 🚧 Please note this is not an official tool (yet). The usage and APIs may have breaking changes frequently.
-
 ## Install 
 
 ```bash
-npm i -g @antfu/wyg
+npm i -g @wenyanlang/wyg
 ```
 
 ## Usage
@@ -38,8 +36,8 @@ Then write code as you always do
 
 ### Publish Your Own Packages
 
-Please check out [wyg-registry](https://github.com/antfu/wyg-registry)
+Please check out [wyg-registry](https://github.com/wenyan-lang/wyg-registry)
 
 ## License
 
-[MIT License](https://github.com/antfu/wyg/blob/master/LICENSE) © 2020 [Anthony Fu](https://github.com/antfu)
+[MIT License](https://github.com/wenyan-lang/wyg/blob/master/LICENSE) © 2020 [Anthony Fu](https://github.com/antfu)
