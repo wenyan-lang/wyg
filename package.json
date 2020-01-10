@@ -8,7 +8,7 @@
     "dev": "rollup -c --watch",
     "build": "npm run typings && rollup -c",
     "typings": "tsc --emitDeclarationOnly",
-    "publish:ci": "npm run build && npm publish",
+    "publish:ci": "npm run build && npm publish --access public",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest"
