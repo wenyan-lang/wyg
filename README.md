@@ -1,4 +1,4 @@
-# wypm
+# 文淵閣 wyg, `wenyan-get`
 
 Package management for Wenyan Lang 
 
@@ -7,29 +7,37 @@ Package management for Wenyan Lang
 ## Install 
 
 ```bash
-npm i -g @antfu/wypm
+npm i -g @antfu/wyg
 ```
 
 ## Usage
 
 ```bash
-wypm i 子曰
+wyg i 子曰
 ```
 
 or 
 
 ```bash
-wypm i ziyue
+wyg i ziyue
 ```
 
-It will download the code of [`子曰`](https://github.com/antfu/ziyue-wy) to the current directory `藏書樓/子曰`
+It will download the package [`子曰`](https://github.com/antfu/ziyue-wy) under `藏書樓/子曰`. You can think of `藏書樓` as the Wenyan version of `node_modules`. 
 
-Think of `藏書樓` like the `node_modules` of Node.js. You may also want to include `藏書樓` into your `.gitignore`
+> 💡 You may want to include `藏書樓` into your `.gitignore` as well
+
+Then write code as you always do
+
+```
+吾嘗觀「「子曰」」之書。方悟「子曰」之義。
+
+子曰「「巧言令色，鮮矣仁！」」。
+```
 
 ### Publish Your Own Packages
 
-Please check out [wypm-registry](https://github.com/antfu/wypm-registry)
+Please check out [wyg-registry](https://github.com/antfu/wyg-registry)
 
 ## License
 
-[MIT License](https://github.com/antfu/wypm/blob/master/LICENSE) © 2020 [Anthony Fu](https://github.com/antfu)
+[MIT License](https://github.com/antfu/wyg/blob/master/LICENSE) © 2020 [Anthony Fu](https://github.com/antfu)

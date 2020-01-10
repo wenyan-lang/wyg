@@ -1,7 +1,7 @@
 {
-  "name": "@antfu/wypm",
+  "name": "@antfu/wyg",
   "version": "0.0.4",
-  "description": "Package management for Wenyan Lang",
+  "description": "文淵閣 - Package management for Wenyan Lang",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -14,14 +14,14 @@
     "test": "jest"
   },
   "bin": {
-    "wypm": "dist/cli.js"
+    "wyg": "dist/cli.js"
   },
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/wypm.git"
+    "url": "git+https://github.com/antfu/wyg.git"
   },
   "husky": {
     "hooks": {
@@ -47,9 +47,9 @@
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/antfu/wypm/issues"
+    "url": "https://github.com/antfu/wyg/issues"
   },
-  "homepage": "https://github.com/antfu/wypm#readme",
+  "homepage": "https://github.com/antfu/wyg#readme",
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.2.10",
     "@rollup/plugin-json": "^4.0.1",

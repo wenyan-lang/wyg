@@ -34,7 +34,7 @@ async function handleInstall (packages: string[], cmd: any) {
 
 program
   .version(version)
-  .name('wypm')
+  .name('wyg')
 
 program
   .command('install [names...]')
