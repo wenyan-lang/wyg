@@ -34,6 +34,8 @@ Then write code as you always do
 子曰「「巧言令色，鮮矣仁！」」。
 ```
 
+*Please note you have to use Wenyan v0.2.2 or above to import correctly*
+
 ### Publish Your Own Packages
 
 Please check out [wyg-registry](https://github.com/antfu/wyg-registry)
