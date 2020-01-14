@@ -1,6 +1,6 @@
 {
   "name": "@wenyanlang/wyg",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "文淵閣 - Package management for Wenyan Lang",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,6 +9,7 @@
     "build": "npm run typings && rollup -c",
     "typings": "tsc --emitDeclarationOnly",
     "publish:ci": "npm run build && npm publish --access public",
+    "release": "bump --commit --push --tag && npm run publish:ci",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest"
