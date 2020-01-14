@@ -1,6 +1,6 @@
 {
   "name": "@wenyanlang/wyg",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "文淵閣 - Package management for Wenyan Lang",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
