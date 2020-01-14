@@ -17,7 +17,7 @@ async function handleInstall (packages: string[], cmd: any) {
     const resolvedPackages = []
 
     for (const pkg of packages) {
-      const [name, repo] = await resolvePackageName(pkg)
+      const [name, { repo }] = await resolvePackageName(pkg)
       consola.info(`Installing ${name}...`)
       await getPackage(name, repo)
       resolvedPackages.push(name)

@@ -1,6 +1,6 @@
-# 文淵閣 wyg, `wenyan-get`
+# 文淵閣 - Package management
 
-Package management for Wenyan Lang 
+文淵閣, wyg or wenyan-get.
 
 ## Install 
 

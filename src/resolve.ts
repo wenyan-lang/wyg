@@ -1,5 +1,4 @@
 import { RepoInfo } from './types'
-import { DEFAULT_REGISTRY_INDEX_FILENAME } from './meta'
 
 export function resolveRepoLink (repoLink: string): RepoInfo {
   const regex = /^(?:(github|gitlab|bitbucket):)?(?:(.+):)?([^/]+)\/([^#]+)(?:#(.+))?$/
@@ -51,10 +50,4 @@ export function getRepoRoot (repo: RepoInfo | string) {
   if (repo.type === 'github')
     return `https://github.com/${repo.owner}/${repo.name}/tree/${repo.checkout}`
   throw new SyntaxError(`Resolving root for ${repo.type} is not yet supported.`)
-}
-
-export function resolveRegistryIndex (registryIndex: string) {
-  const repo = resolveRepoLink(registryIndex)
-
-  return `${getRepoRawRoot(repo)}/${DEFAULT_REGISTRY_INDEX_FILENAME}`
 }
