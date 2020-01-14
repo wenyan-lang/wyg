@@ -15,3 +15,5 @@ export interface RepoInfo {
   owner: string
   origin?: string
 }
+
+export type Fetch = ((url: string) => Promise<{data: RegistryIndex}>)

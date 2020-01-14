@@ -1,9 +1,11 @@
 import commander from 'commander'
 import consola from 'consola'
+import axios from 'axios'
 // @ts-ignore
 import updateNotifier from 'update-notifier'
 import pkg, { version } from '../package.json'
-import { getRegistryIndex, getPackage, resolvePackageName } from './registry'
+import { getRegistryIndex, resolvePackageName } from './registry'
+import { getPackage } from './downloader'
 
 updateNotifier({
   pkg,
@@ -17,7 +19,7 @@ async function handleInstall (packages: string[], cmd: any) {
     const resolvedPackages = []
 
     for (const pkg of packages) {
-      const [name, { repo }] = await resolvePackageName(pkg)
+      const { name, repo } = await resolvePackageName(axios.get, pkg)
       consola.info(`Installing ${name}...`)
       await getPackage(name, repo)
       resolvedPackages.push(name)
@@ -50,7 +52,7 @@ program
   .command('list')
   .description('list all available packages')
   .action(async () => {
-    const data = await getRegistryIndex()
+    const data = await getRegistryIndex(axios.get)
     consola.log(data)
   })
 

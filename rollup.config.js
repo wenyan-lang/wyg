@@ -2,6 +2,7 @@
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import dts from 'rollup-plugin-dts'
+import { uglify } from 'rollup-plugin-uglify'
 
 const external = [
   'commander',
@@ -39,6 +40,22 @@ export default [
     plugins: [
       typescript(),
       json(),
+    ],
+    external,
+  },
+  {
+    input: 'src/runtime.ts',
+    output: [
+      {
+        file: 'dist/runtime.umd.js',
+        format: 'umd',
+        name: 'Wyg',
+      },
+    ],
+    plugins: [
+      typescript(),
+      json(),
+      uglify(),
     ],
     external,
   },

@@ -4,6 +4,7 @@
   "description": "文淵閣 - Package management for Wenyan Lang",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "unpkg": "dist/runtime.umd.js",
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "npm run typings && rollup -c",
@@ -68,7 +69,7 @@
     "lint-staged": "9.5.0",
     "rollup": "^1.29.0",
     "rollup-plugin-dts": "1.1.13",
-    "rollup-plugin-uglify": "6.0.4",
+    "rollup-plugin-uglify": "^6.0.4",
     "ts-jest": "^24.3.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.4"

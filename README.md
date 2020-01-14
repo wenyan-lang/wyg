@@ -38,6 +38,25 @@ Then write code as you always do
 
 Please check out [wyg-registry](https://github.com/wenyan-lang/wyg-registry)
 
+### Use wyg in browser
+
+```html
+<script src="https://unpkg.com/@wenyanlang/wyg"></script>
+```
+
+```js
+Wyg.resolve('ziyue')
+  .then(({ name, entry, author, repo }) => {
+    console.log(name, entry)
+  })
+```
+
+Outputs:
+
+```
+子曰 https://raw.githubusercontent.com/antfu/ziyue-wy/master/序.wy
+```
+
 ## License
 
 [MIT License](https://github.com/wenyan-lang/wyg/blob/master/LICENSE) © 2020 [Anthony Fu](https://github.com/antfu)
