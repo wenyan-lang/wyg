@@ -1,8 +1,25 @@
-import { resolvePackageName } from './registry'
+import { resolvePackageName, getRegistryIndex } from './registry'
+import { RegistryIndex } from './types'
+
+const get = (url: string) => window.fetch(url)
+  .then(r => r.json())
+  .then(i => ({ data: i as RegistryIndex }))
+
+export const getIndex = () => {
+  return getRegistryIndex(
+    get,
+  )
+}
+
+export const list = async () => {
+  const index = await getRegistryIndex(get)
+
+  return Object.entries(index.packages).map(([name, value]) => ({ ...value, name }))
+}
 
 export const resolve = (name: string) => {
   return resolvePackageName(
-    (url: string) => window.fetch(url).then(r => ({ data: r.json() })) as any,
+    get,
     name,
   )
 }
