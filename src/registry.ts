@@ -20,7 +20,8 @@ export async function getRegistryIndex (
 
 export async function resolvePackageName (fetch: Fetch, packageName: string) {
   const index = await getRegistryIndex(fetch)
-  let name = packageName
+  // eslint-disable-next-line prefer-const
+  let [name, version] = packageName.split('@', 2)
 
   if (index.alias[name])
     name = index.alias[name]
@@ -29,6 +30,7 @@ export async function resolvePackageName (fetch: Fetch, packageName: string) {
     return {
       name,
       ...index.packages[name],
+      version,
     }
   }
 

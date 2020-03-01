@@ -9,7 +9,7 @@ import { getPackage } from './downloader'
 
 updateNotifier({
   pkg,
-  // updateCheckInterval: 1000 * 60 * 60 * 24 * 3, // 3 days
+  updateCheckInterval: 1000 * 60 * 60 * 24 * 7, // 7 days
 }).notify()
 
 const program = new commander.Command()
@@ -19,7 +19,11 @@ async function handleInstall (packages: string[], cmd: any) {
     const resolvedPackages = []
 
     for (const pkg of packages) {
-      const { name, repo } = await resolvePackageName(axios.get, pkg)
+      const { name, repo, dependencies } = await resolvePackageName(axios.get, pkg)
+      if (dependencies && Object.keys(dependencies).length) {
+        consola.info(`Installing dependencies of ${name}...`)
+        await handleInstall(Object.entries(dependencies).map(([n, v]) => `${n}@${v}`), cmd)
+      }
       consola.info(`Installing ${name}...`)
       await getPackage(name, repo)
       resolvedPackages.push(name)
