@@ -5,6 +5,7 @@ export interface RegistryIndex {
     description?: string
     author?: string
     dependencies?: Record<string, string>
+    examples?: string[]
   }>
   alias: Record<string, string>
 }

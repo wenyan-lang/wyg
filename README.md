@@ -11,14 +11,14 @@
 npm i -g @wenyanlang/wyg
 ```
 
-## Usage
+## Example Usage
 
 ```bash
 wyg i ziyue
 ```
 
-Chinese name is also acceptale
-
+Chinese names are also acceptable
+s
 ```bash
 wyg i 子曰
 ```
@@ -43,7 +43,7 @@ Please following [the instruction in wyg-registry](https://github.com/wenyan-lan
 
 ### Use wyg in browser
 
-You can fetch the package infomation by
+You can fetch the package information by
 
 ```html
 <script src="https://unpkg.com/@wenyanlang/wyg"></script>
