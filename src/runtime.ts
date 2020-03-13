@@ -1,6 +1,6 @@
 import { resolvePackageName, getRegistryIndex } from './registry'
 import { RegistryIndex } from './types'
-import { resolveRepoLink, getRepoRoot } from './resolve'
+import { resolveRepoLink, getRepoRoot, getRepoRawRoot } from './resolve'
 
 const get = (url: string) => window.fetch(url)
   .then(r => r.json())
@@ -25,4 +25,4 @@ export const resolve = (name: string) => {
   )
 }
 
-export { resolveRepoLink, getRepoRoot }
+export { resolveRepoLink, getRepoRoot, getRepoRawRoot }
