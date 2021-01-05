@@ -76,7 +76,7 @@
     "version-bump-prompt": "^6.0.1"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "commander": "^4.1.0",
     "consola": "^2.11.3",
     "download-git-repo": "^3.0.2",
